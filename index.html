@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth bg-[#050505] text-[#EDEDED] antialiased selection:bg-[#FF1E1E] selection:text-black">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MONVCO — Independent Music Label</title>
+  <!-- Google Fonts & Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#e10000',
+              darkred: '#990000',
+              black: '#050505',
+              card: '#0D0D0D',
+              border: '#1F1F1F',
+              line: 'rgba(255, 30, 30, 0.25)',
+            }
+          },
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .stroke-text {
+      -webkit-text-stroke: 1px rgba(255, 30, 30, 0.4);
+      color: transparent;
+    }
+    .stroke-text:hover {
+      color: #FF1E1E;
+      -webkit-text-stroke: 1px #FF1E1E;
+    }
+     /* Animación de aparición suave */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  </style>
+</head>
+<body class="overflow-x-hidden font-sans border-t-2 border-brand-red">
+
+  <!-- TOP TICKER / METADATA -->
+  <div class="border-b border-brand-border px-6 py-2 flex justify-between items-center text-[10px] font-mono tracking-widest text-[#707070] uppercase">
+    <span>MONVCO PROJECT // EST. 2026</span>
+    <span class="hidden md:inline text-brand-red">● RECORDING STUDIO & ARTIST DEVELOPMENT</span>
+    <span>IBAGUÉ, COLOMBIA [4.4389° N, 75.2322° W]</span>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-[#050505]/90 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center group">
+      <img 
+        src="assets/img/logo-monvco.png" 
+        alt="MONVCO Records" 
+        class="h-10 md:h-12 w-auto object-contain transition duration-300 group-hover:brightness-125"
+      >
+    </a>
+
+      <nav class="hidden md:flex items-center space-x-10 text-xs font-mono tracking-widest uppercase">
+        <a href="#releases" class="hover:text-brand-red transition text-[#A0A0A0]">Music</a>
+        <a href="#videos" class="hover:text-brand-red transition text-[#A0A0A0]">Music Videos</a>
+        <a href="#services" class="text-brand-red transition">Services [Packs]</a>
+        <a href="#roster" class="hover:text-brand-red transition text-[#A0A0A0]">Artists</a>
+        <a href="#contact" class="hover:text-brand-red transition text-[#A0A0A0]">Contact</a>
+      </nav>
+
+      <a href="https://open.spotify.com/playlist/0VQjVA1fKjZPtSW1Zyg0qM?si=x1dznaifTUyw2Q65L2k3LA" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="bg-transparent border border-brand-red text-brand-red hover:bg-brand-red hover:text-black transition px-5 py-2 text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2">
+  <span class="inline-block w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse"></span>
+  [ Listen On Spotify]
+</a>
+    </div>
+  </header>
+
+<!-- ================= HERO: MINIMAL NEWS WITH IMAGE ================= -->
+  <section class="relative min-h-[85vh] border-b border-brand-border bg-[#050505] p-6 md:p-12 flex flex-col justify-between">
+    
+    <!-- Tag superior discreto -->
+    <div class="max-w-7xl mx-auto w-full pt-2">
+      <div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-brand-red border border-brand-line px-3 py-1 bg-black">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse"></span>
+        LATEST NEWS // 2026
+      </div>
+    </div>
+
+    <!-- Contenedor Principal: Texto Moderado a la Izquierda + Imagen a la Derecha -->
+    <div class="max-w-7xl mx-auto w-full py-8 my-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      
+      <!-- ================= COLUMNA IZQUIERDA: TEXTO Y BOTONES (7 Cols) ================= -->
+      <div class="lg:col-span-7">
+        <span class="text-neutral-500 font-mono text-xs uppercase tracking-widest block mb-3">
+          [ OUT NOW ON STREAMING PLATFORMS ]
+        </span>
+
+        <!-- Título con tamaño reducido y controlado (text-3xl en móvil / text-5xl en PC) -->
+        <h1 class="font-syne font-extrabold text-3xl sm:text-4xl md:text-5xl text-white uppercase tracking-tight leading-tight mb-4">
+          PROVERBIOS VOL. 1 <br>
+          <span class="text-brand-red">LI4N X HELLZTAR.</span>
+        </h1>
+
+        <p class="max-w-xl text-neutral-400 font-sans text-sm md:text-base mb-8 leading-relaxed">
+          El nuevo proyecto discográfico producido por MONVCO ya se encuentra disponible en Spotify, Apple Music y todas las plataformas.
+        </p>
+
+        <!-- Botones de Acción -->
+        <div class="flex flex-wrap gap-4 items-center">
+          <a href="https://open.spotify.com/intl-es/album/350PuQW5R69YtSyoT1Fzrs?si=OX-2QBIhS6yDSiVUj7IdHw"target="_blank" class="bg-brand-red hover:bg-white text-black font-mono font-bold text-xs uppercase tracking-widest px-7 py-3.5 transition flex items-center gap-2">
+            Escuchar Proyecto ▶
+          </a>
+          <a href="#videos" class="border border-neutral-700 hover:border-brand-red hover:text-brand-red text-white font-mono text-xs uppercase tracking-widest px-7 py-3.5 transition">
+            Ver Videoclip →
+          </a>
+        </div>
+      </div>
+
+      <!-- ================= COLUMNA DERECHA: IMAGEN / ARTWORK (5 Cols) ================= -->
+      <div class="lg:col-span-5 group">
+        <div class="relative aspect-square sm:aspect-[4/3] lg:aspect-square overflow-hidden bg-neutral-900 border border-brand-border group-hover:border-brand-red transition duration-500 shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+          
+          <!-- Foto o Portada del Lanzamiento -->
+          <img 
+            src="assets/img/proverbios-cover.png" 
+            alt="MONVCO Latest Drop" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-95 group-hover:brightness-100"
+            onerror="this.src='https://placehold.co/800x800/0d0d0d/ff1e1e?text=MONVCO+COVER+ART'"
+          >
+
+          <!-- Badge flotante en la esquina de la imagen -->
+          <div class="absolute bottom-3 left-3 bg-black/85 backdrop-blur-md px-3 py-1 font-mono text-[10px] text-neutral-300 uppercase border border-neutral-800">
+            ÁLBUM // NEW DROP
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Barra Inferior: 3 Noticias Rápidas en una sola línea -->
+    <div class="max-w-7xl mx-auto w-full border-t border-brand-border pt-6 mt-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
+        
+        <!-- Noticia 1 -->
+        <a href="#roster" class="group flex items-start gap-3 text-neutral-400 hover:text-white transition">
+          <span class="text-brand-red font-bold">01</span>
+          <div>
+            <p class="text-white group-hover:text-brand-red transition uppercase font-bold">seka</p>
+            <p class="text-neutral-500 text-[11px]">Estrena su primer single "BOOKER"</p>
+          </div>
+        </a>
+
+        <!-- Noticia 2 -->
+        <a href="#services" class="group flex items-start gap-3 text-neutral-400 hover:text-white transition md:border-l md:border-brand-border md:pl-6">
+          <span class="text-brand-red font-bold">02</span>
+          <div>
+            <p class="text-white group-hover:text-brand-red transition uppercase font-bold">Studio Sessions</p>
+            <p class="text-neutral-500 text-[11px]">Agenda abierta a precios de lanzamiento!!</p>
+          </div>
+        </a>
+
+        <!-- Noticia 3 -->
+        <a href="#releases" class="group flex items-start gap-3 text-neutral-400 hover:text-white transition md:border-l md:border-brand-border md:pl-6">
+          <span class="text-brand-red font-bold">03</span>
+          <div>
+            <p class="text-white group-hover:text-brand-red transition uppercase font-bold">Hellztar</p>
+            <p class="text-neutral-500 text-[11px]">"Hellzone" supera 50K streams</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SECTION: LATEST RELEASES -->
+  <section id="releases" class="scroll-mt-20 py-24 px-6 md:px-12 border-b border-brand-border max-w-7xl mx-auto">
+    
+    <!-- Encabezado de Sección -->
+    <div class="flex flex-col sm:flex-row justify-between sm:items-end mb-16 border-b border-brand-line pb-6 gap-4">
+      <div>
+        <span class="text-brand-red font-mono text-xs tracking-widest uppercase block">// CATALOGUE & STREAMING</span>
+        <h2 class="font-syne font-extrabold text-4xl md:text-5xl text-white tracking-tight uppercase">Latest Releases</h2>
+      </div>
+      <a href="https://open.spotify.com/playlist/0VQjVA1fKjZPtSW1Zyg0qM?si=4FBzbn-XQgGx_tWvDBY1Sg" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-brand-red hover:underline tracking-widest uppercase flex items-center gap-1">
+        View Full Discography ↗
+      </a>
+    </div>
+
+    <!-- Grid de Lanzamientos -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- ================= RELEASE 01 ================= -->
+      <article class="reveal group relative bg-[#0A0A0A] border border-brand-border hover:border-brand-red transition-all duration-300 p-4 flex flex-col justify-between">
+        
+        <!-- Contenedor del Artwork con Link a Spotify -->
+        <a href="https://open.spotify.com/intl-es/album/41qB3kwmctXJeN6IayzEn2?si=HSxKrTmhRHGD58Y-wTJ-Rg" target="_blank" rel="noopener noreferrer" class="relative block aspect-square overflow-hidden mb-5 bg-neutral-900 border border-neutral-800">
+          
+          <!-- Imagen de la portada -->
+          <img 
+            src="assets/img/cover-vancleef.png" 
+            alt="Portada - Nombre del Tema" 
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 brightness-95 group-hover:brightness-100"
+            onerror="this.src='https://placehold.co/800x800/0d0d0d/ff1e1e?text=MONVCO+RELEASE'"
+          >
+
+          <!-- Overlay al pasar el mouse (Hover) -->
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+            <span class="bg-brand-red text-black font-mono font-bold text-xs px-4 py-2 uppercase tracking-widest flex items-center gap-2">
+              Play on Spotify ▶
+            </span>
+            <span class="font-mono text-[10px] text-neutral-300 uppercase tracking-widest">
+              [ STREAM NOW ↗ ]
+            </span>
+          </div>
+
+          <!-- Badge tipo ficha técnica en esquina superior -->
+          <div class="absolute top-2 left-2 bg-black/80 backdrop-blur-sm border border-neutral-800 px-2 py-0.5 text-[9px] font-mono text-neutral-400 uppercase">
+            SINGLE
+          </div>
+        </a>
+
+        <!-- Metadata de la Canción -->
+        <div>
+          <div class="flex justify-between items-baseline mb-1">
+            <a href="https://open.spotify.com/intl-es/album/41qB3kwmctXJeN6IayzEn2?si=HSxKrTmhRHGD58Y-wTJ-Rg" target="_blank" rel="noopener noreferrer" class="font-syne font-extrabold text-xl text-white group-hover:text-brand-red transition uppercase tracking-tight">
+              VAN CLEEF
+            </a>
+            <span class="font-mono text-xs text-neutral-500">2026</span>
+          </div>
+          <div class="flex justify-between items-center text-xs font-mono">
+            <span class="text-brand-red uppercase tracking-wider">RETRO</span>
+            <span class="text-neutral-600 text-[10px] uppercase">PROD. MONVCO</span>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ================= RELEASE 02 ================= -->
+      <article class="reveal group relative bg-[#0A0A0A] border border-brand-border hover:border-brand-red transition-all duration-300 p-4 flex flex-col justify-between">
+        
+        <a href="https://open.spotify.com/intl-es/album/1z5iIVoaKWnkGlyuMNGczd?si=0rBQmeZWTzOd_OXi5bNO0w" target="_blank" rel="noopener noreferrer" class="relative block aspect-square overflow-hidden mb-5 bg-neutral-900 border border-neutral-800">
+          
+          <img 
+            src="assets/img/cover-jakaranda.png" 
+            alt="Portada - Nombre del EP" 
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 brightness-95 group-hover:brightness-100"
+            onerror="this.src='https://placehold.co/800x800/0d0d0d/ff1e1e?text=MONVCO+RELEASE'"
+          >
+
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+            <span class="bg-brand-red text-black font-mono font-bold text-xs px-4 py-2 uppercase tracking-widest flex items-center gap-2">
+              Play on Spotify ▶
+            </span>
+            <span class="font-mono text-[10px] text-neutral-300 uppercase tracking-widest">
+              [ STREAM NOW ↗ ]
+            </span>
+          </div>
+
+          <div class="absolute top-2 left-2 bg-black/80 backdrop-blur-sm border border-neutral-800 px-2 py-0.5 text-[9px] font-mono text-neutral-400 uppercase">
+            HOME RUN // ALBUM
+          </div>
+        </a>
+
+        <div>
+          <div class="flex justify-between items-baseline mb-1">
+            <a href="https://open.spotify.com/intl-es/album/1z5iIVoaKWnkGlyuMNGczd?si=0rBQmeZWTzOd_OXi5bNO0w" target="_blank" rel="noopener noreferrer" class="font-syne font-extrabold text-xl text-white group-hover:text-brand-red transition uppercase tracking-tight">
+              jakaranda
+            </a>
+            <span class="font-mono text-xs text-neutral-500">2026</span>
+          </div>
+          <div class="flex justify-between items-center text-xs font-mono">
+            <span class="text-brand-red uppercase tracking-wider">HELLZTAR</span>
+            <span class="text-neutral-600 text-[10px] uppercase">PROD. MONVCO</span>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ================= RELEASE 03 ================= -->
+      <article class="reveal group relative bg-[#0A0A0A] border border-brand-border hover:border-brand-red transition-all duration-300 p-4 flex flex-col justify-between">
+        
+        <a href="https://open.spotify.com/intl-es/album/54MzTDTCbFRM0HGmy3A4kF?si=5JEKw46ISu22n2bhEyNaJw" target="_blank" rel="noopener noreferrer" class="relative block aspect-square overflow-hidden mb-5 bg-neutral-900 border border-neutral-800">
+          
+          <img 
+            src="assets/img/cover-booker.png" 
+            alt="Portada - Nombre del Single" 
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 brightness-95 group-hover:brightness-100"
+            onerror="this.src='https://placehold.co/800x800/0d0d0d/ff1e1e?text=MONVCO+RELEASE'"
+          >
+
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3 p-4">
+            <span class="bg-brand-red text-black font-mono font-bold text-xs px-4 py-2 uppercase tracking-widest flex items-center gap-2">
+              Play on Spotify ▶
+            </span>
+            <span class="font-mono text-[10px] text-neutral-300 uppercase tracking-widest">
+              [ STREAM NOW ↗ ]
+            </span>
+          </div>
+
+          <div class="absolute top-2 left-2 bg-black/80 backdrop-blur-sm border border-neutral-800 px-2 py-0.5 text-[9px] font-mono text-neutral-400 uppercase">
+            FIRST RELEASE
+          </div>
+        </a>
+
+        <div>
+          <div class="reveal flex justify-between items-baseline mb-1">
+            <a href="https://open.spotify.com/intl-es/album/54MzTDTCbFRM0HGmy3A4kF?si=_TobuHvsS-Ga84PEpY3dqg" target="_blank" rel="noopener noreferrer" class="font-syne font-extrabold text-xl text-white group-hover:text-brand-red transition uppercase tracking-tight">
+              BOOKER
+            </a>
+            <span class="font-mono text-xs text-neutral-500">2026</span>
+          </div>
+          <div class="flex justify-between items-center text-xs font-mono">
+            <span class="text-brand-red uppercase tracking-wider">SEKA</span>
+            <span class="text-neutral-600 text-[10px] uppercase">MONVCO ARTIST</span>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION: MUSIC VIDEOS / VISUALS ================= -->
+  <section id="videos" class="scroll-mt-20 py-24 px-6 md:px-12 border-b border-brand-border bg-black max-w-7xl mx-auto">
+    
+    <!-- Encabezado Editorial -->
+    <div class="flex flex-col sm:flex-row justify-between sm:items-end mb-16 border-b border-brand-line pb-6 gap-4">
+      <div>
+        <span class="text-brand-red font-mono text-xs tracking-widest uppercase block">// CINEMATIC ARCHIVE & VISUALS</span>
+        <h2 class="font-syne font-extrabold text-4xl md:text-5xl text-white tracking-tight uppercase">Music Videos</h2>
+      </div>
+      <a href="https://youtube.com/@monvco____" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-brand-red hover:underline tracking-widest uppercase flex items-center gap-1">
+        Official YouTube Channel ↗
+      </a>
+    </div>
+
+    <!-- Grid de Videos (Formato 16:9 Cinematográfico) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+      <!-- ================= VIDEO 01 ================= -->
+      <article class="group bg-[#0A0A0A] border border-brand-border hover:border-brand-red transition-all duration-300 p-4">
+        <!-- Thumbnail 16:9 -->
+        <a href="https://www.youtube.com/watch?v=5cY8SJdNlc8&list=RD5cY8SJdNlc8&start_radio=1&pp=ygUMa2hhbGlmYSBsaTRuoAcB" target="_blank" rel="noopener noreferrer" class="relative block aspect-video overflow-hidden mb-4 bg-neutral-900 border border-neutral-800">
+          <img 
+            src="assets/img/miniatura-khalifa.jpg" 
+            alt="Thumbnail Music Video 1" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-90 group-hover:brightness-100"
+            onerror="this.src='https://placehold.co/1280x720/0d0d0d/ff1e1e?text=MONVCO+VISUALS'"
+          >
+          
+          <!-- Botón de Play Central en Hover -->
+          <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span class="bg-brand-red text-black font-mono font-bold text-xs px-5 py-3 uppercase tracking-widest flex items-center gap-2">
+              Watch on YouTube ▶
+            </span>
+          </div>
+
+          <!-- Badge de Calidad -->
+          <div class="absolute top-3 left-3 bg-black/80 backdrop-blur-sm border border-neutral-800 px-2 py-0.5 text-[9px] font-mono text-white uppercase">
+            [ 4K OFFICIAL VIDEO ]
+          </div>
+        </a>
+
+        <!-- Metadata del Video -->
+        <div class="flex justify-between items-start pt-2">
+          <div>
+            <h3 class="font-syne font-extrabold text-2xl text-white group-hover:text-brand-red transition uppercase tracking-tight">
+              Khalifa (Oficial Video)
+            </h3>
+            <p class="font-mono text-xs text-brand-red uppercase mt-1">Li4n</p>
+          </div>
+          <div class="text-right font-mono text-[11px] text-neutral-500 uppercase">
+            <span>DIR. MONVCO CREATIVE</span><br>
+            <span class="text-neutral-600">2026</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- ================= VIDEO 02 ================= -->
+      <article class="group bg-[#0A0A0A] border border-brand-border hover:border-brand-red transition-all duration-300 p-4">
+        <!-- Thumbnail 16:9 -->
+        <a href="https://www.youtube.com/watch?v=cXQbmRMfkMk&list=RDcXQbmRMfkMk&start_radio=1" target="_blank" rel="noopener noreferrer" class="relative block aspect-video overflow-hidden mb-4 bg-neutral-900 border border-neutral-800">
+          <img 
+            src="assets/img/miniatura-dope.jpg" 
+            alt="Thumbnail Music Video 2" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-90 group-hover:brightness-100"
+            onerror="this.src='https://placehold.co/1280x720/0d0d0d/ff1e1e?text=MONVCO+VISUALS'"
+          >
+          
+          <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span class="bg-brand-red text-black font-mono font-bold text-xs px-5 py-3 uppercase tracking-widest flex items-center gap-2">
+              Watch on YouTube ▶
+            </span>
+          </div>
+
+          <div class="absolute top-3 left-3 bg-black/80 backdrop-blur-sm border border-neutral-800 px-2 py-0.5 text-[9px] font-mono text-white uppercase">
+            [ VISUALIZER ]
+          </div>
+        </a>
+
+        <!-- Metadata del Video -->
+        <div class="flex justify-between items-start pt-2">
+          <div>
+            <h3 class="font-syne font-extrabold text-2xl text-white group-hover:text-brand-red transition uppercase tracking-tight">
+              DoPE (Oficial Video)
+            </h3>
+            <p class="font-mono text-xs text-brand-red uppercase mt-1">Kidd Keca</p>
+          </div>
+          <div class="text-right font-mono text-[11px] text-neutral-500 uppercase">
+            <span>DIR. Anita Ballén</span><br>
+            <span class="text-neutral-600">2026</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SECTION: PROD PACKS & SERVICES (INSPIRADO DIRECTAMENTE EN EL DOCUMENTO ADJUNTO) -->
+  <section id="services" class="py-24 px-6 md:px-12 border-b border-brand-border bg-[#050505]">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="font-syne font-bold text-brand-red tracking-widest text-lg uppercase block">MONVCO</span>
+        <h2 class="font-syne font-extrabold text-4xl md:text-5xl text-white uppercase tracking-tight">PROD PACKS</h2>
+        <div class="h-0.5 w-24 bg-brand-red mx-auto mt-4"></div>
+      </div>
+
+      <!-- Main Pricing Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        
+        <!-- 01 START -->
+        <div class="reveal border border-brand-border hover:border-brand-red p-8 flex flex-col justify-between text-center bg-black transition duration-300">
+          <div>
+            <h3 class="font-syne font-bold text-brand-red text-xl uppercase mb-6 tracking-wide">01 | MONVCO START</h3>
+            <ul class="font-mono text-xs uppercase space-y-3 text-neutral-300 mb-8 leading-relaxed">
+              <li>2 Horas de Grabación</li>
+              <li>Edición Vocal</li>
+              <li>Mezcla</li>
+              <li>Master</li>
+              <li class="text-neutral-500">1 Revisión</li>
+            </ul>
+          </div>
+          <div>
+            <span class="font-syne font-extrabold text-3xl text-brand-red block mb-6">$300K</span>
+                <a href="https://calendar.app.google/ssNtg5y24r9kc9k69" target="_blank" class="block text-center w-full border border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-mono text-xs py-3 uppercase tracking-widest transition cursor-pointer">Book Start ↗</a></div>
+        </div>
+
+        <!-- 02 SINGLE (Highlighted) -->
+        <div class="reveal border-2 border-brand-red p-8 flex flex-col justify-between text-center bg-black relative shadow-[0_0_30px_rgba(255,30,30,0.15)]">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-red text-black font-mono text-[10px] font-bold px-3 py-0.5 uppercase tracking-wider">
+            RECOMMENDED
+          </div>
+          <div>
+            <h3 class="font-syne font-bold text-brand-red text-xl uppercase mb-6 tracking-wide">02 | MONVCO SINGLE</h3>
+            <ul class="font-mono text-xs uppercase space-y-3 text-neutral-200 mb-8 leading-relaxed">
+              <li>Beatmaking</li>
+              <li>Grabación</li>
+              <li>Edición Vocal</li>
+              <li>Mezcla</li>
+              <li>Master</li>
+            </ul>
+          </div>
+          <div>
+            <span class="font-syne font-extrabold text-4xl text-brand-red block mb-6">$600K</span>
+            <a href="https://calendar.app.google/ssNtg5y24r9kc9k69" target="_blank" class="block text-center w-full bg-brand-red text-black hover:bg-white font-mono text-xs font-bold py-3 uppercase tracking-widest transition cursor-pointer">Book Single ↗
+</a>
+          </div>
+        </div>
+
+        <!-- 03 PROJECT -->
+        <div class="reveal border border-brand-border hover:border-brand-red p-8 flex flex-col justify-between text-center bg-black transition duration-300">
+          <div>
+            <h3 class="font-syne font-bold text-brand-red text-xl uppercase mb-6 tracking-wide">03 | MONVCO PROJECT</h3>
+            <ul class="font-mono text-xs uppercase space-y-3 text-neutral-300 mb-8 leading-relaxed">
+              <li>EP - Álbum - Mixtape</li>
+              <li>Dirección Creativa</li>
+              <li>Mezcla</li>
+              <li>Master</li>
+            </ul>
+          </div>
+          <div>
+            <span class="font-mono text-xs text-neutral-500 block uppercase">Desde</span>
+            <span class="font-syne font-extrabold text-3xl text-brand-red block mb-6">700K</span>
+            <a href="https://calendar.app.google/ssNtg5y24r9kc9k69" target="_blank" class="block text-center w-full border border-brand-red text-brand-red hover:bg-brand-red hover:text-black font-mono text-xs py-3 uppercase tracking-widest transition cursor-pointer">Start Project ↗</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Additional Services Bar (Flyer layout) -->
+      <div class="border-t border-b border-brand-red py-8 my-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 items-center gap-6 text-center font-mono">
+          <div class="font-syne font-bold text-brand-red uppercase text-lg tracking-wider">
+            SERVICIOS<br>ADICIONALES
+          </div>
+          <div class="border-l border-r border-brand-border md:border-none py-2">
+            <span class="text-neutral-400 text-xs block uppercase">|| MIX & MST ||</span>
+            <span class="text-brand-red font-bold text-lg">|| $200K ||</span>
+          </div>
+          <div class="border-l border-r border-brand-border md:border-none py-2">
+            <span class="text-neutral-400 text-xs block uppercase">|| BEATMAKING ||</span>
+            <span class="text-brand-red font-bold text-lg">|| $300K ||</span>
+          </div>
+          <div class="border-l border-r border-brand-border md:border-none py-2">
+            <span class="text-neutral-400 text-xs block uppercase">|| VOCAL RECORDING ||</span>
+            <span class="text-brand-red font-bold text-lg">|| $150K ||</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: THE ROSTER (ARTISTS) -->
+  <section id="roster" class="scroll-mt-20 py-24 border-b border-brand-border bg-black">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <span class="text-brand-red font-mono text-xs tracking-widest uppercase block mb-2">// MONVCO COLLECTIVE</span>
+      <h2 class="font-syne font-extrabold text-4xl md:text-6xl text-white tracking-tight uppercase mb-16">Monvco Artists</h2>
+
+      <div class="divide-y divide-brand-border border-y border-brand-border">
+        
+        <!-- Artist 1 -->
+        <a href="#" class="group py-8 flex flex-col md:flex-row md:items-center justify-between hover:bg-neutral-950 transition px-4 duration-300">
+          <div class="flex items-baseline space-x-6">
+            <span class="font-mono text-xs text-brand-red">01</span>
+            <span class="font-syne font-extrabold text-3xl md:text-5xl text-white group-hover:text-brand-red transition uppercase">Li4n</span>
+          </div>
+          <div class="flex items-center justify-between md:space-x-12 mt-4 md:mt-0 font-mono text-xs text-neutral-400">
+            <span>TRAP</span>
+            <span>+20 RELEASES</span>
+            <span class="text-brand-red group-hover:translate-x-2 transition duration-200">→</span>
+          </div>
+        </a>
+
+        <!-- Artist 2 -->
+        <a href="#" class="group py-8 flex flex-col md:flex-row md:items-center justify-between hover:bg-neutral-950 transition px-4 duration-300">
+          <div class="flex items-baseline space-x-6">
+            <span class="font-mono text-xs text-brand-red">02</span>
+            <span class="font-syne font-extrabold text-3xl md:text-5xl text-white group-hover:text-brand-red transition uppercase">Hellztar</span>
+          </div>
+          <div class="flex items-center justify-between md:space-x-12 mt-4 md:mt-0 font-mono text-xs text-neutral-400">
+            <span>TRAP</span>
+            <span>+10 RELEASES</span>
+            <span class="text-brand-red group-hover:translate-x-2 transition duration-200">→</span>
+          </div>
+        </a>
+
+        <!-- Artist 3 -->
+        <a href="#" class="group py-8 flex flex-col md:flex-row md:items-center justify-between hover:bg-neutral-950 transition px-4 duration-300">
+          <div class="flex items-baseline space-x-6">
+            <span class="font-mono text-xs text-brand-red">03</span>
+            <span class="font-syne font-extrabold text-3xl md:text-5xl text-white group-hover:text-brand-red transition uppercase">Kidd Keca</span>
+          </div>
+          <div class="flex items-center justify-between md:space-x-12 mt-4 md:mt-0 font-mono text-xs text-neutral-400">
+            <span>TRAP</span>
+            <span>+14 RELEASES</span>
+            <span class="text-brand-red group-hover:translate-x-2 transition duration-200">→</span>
+          </div>
+        </a>
+
+        <!-- Artist 4 -->
+        <a href="#" class="group py-8 flex flex-col md:flex-row md:items-center justify-between hover:bg-neutral-950 transition px-4 duration-300">
+          <div class="flex items-baseline space-x-6">
+            <span class="font-mono text-xs text-brand-red">04</span>
+            <span class="font-syne font-extrabold text-3xl md:text-5xl text-white group-hover:text-brand-red transition uppercase">Retro</span>
+          </div>
+          <div class="flex items-center justify-between md:space-x-12 mt-4 md:mt-0 font-mono text-xs text-neutral-400">
+            <span>TRAP</span>
+            <span>+9 RELEASES</span>
+            <span class="text-brand-red group-hover:translate-x-2 transition duration-200">→</span>
+          </div>
+        </a>
+
+        <!-- Artist 5 -->
+        <a href="#" class="group py-8 flex flex-col md:flex-row md:items-center justify-between hover:bg-neutral-950 transition px-4 duration-300">
+          <div class="flex items-baseline space-x-6">
+            <span class="font-mono text-xs text-brand-red">05</span>
+            <span class="font-syne font-extrabold text-3xl md:text-5xl text-white group-hover:text-brand-red transition uppercase">S3k4</span>
+          </div>
+          <div class="flex items-center justify-between md:space-x-12 mt-4 md:mt-0 font-mono text-xs text-neutral-400">
+            <span>TRAP</span>
+            <span>1 RELEASE</span>
+            <span class="text-brand-red group-hover:translate-x-2 transition duration-200">→</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION: PHILOSOPHY STATEMENT -->
+  <section class="py-32 px-6 border-b border-brand-border bg-black text-center relative overflow-hidden">
+    <div class="max-w-5xl mx-auto z-10 relative">
+      <span class="text-brand-red font-mono text-xs tracking-widest uppercase block mb-6">// THE MONVCO STATEMENT</span>
+      <blockquote class="font-syne font-extrabold text-4xl sm:text-6xl md:text-7xl leading-tight uppercase tracking-tighter text-white">
+        "BUILD THE SOUND.<br>
+        <span class="text-brand-red">BUILD THE WORLD.</span><br>
+        BUILD THE CAREER."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- SECTION: CONTACT & DEMO SUBMISSION -->
+  <section id="contact" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      
+      <div class="lg:col-span-5">
+        <span class="text-brand-red font-mono text-xs tracking-widest uppercase block mb-2">// JOIN THE MOVEMENT</span>
+        <h2 class="font-syne font-extrabold text-4xl md:text-5xl text-white uppercase tracking-tight mb-6">Work with MONVCO.</h2>
+        <p class="text-neutral-400 text-sm leading-relaxed mb-8">
+          ¿Eres artista, productor, creativo o colaborador? Cuéntanos qué proyecto estás construyendo. Buscamos visiones auténticas con proyección a largo plazo.
+        </p>
+        <div class="font-mono text-xs space-y-2 text-neutral-400">
+          <p><span class="text-brand-red">DEMOS:</span> contact.monvco@gmail.com</p>
+          <p><span class="text-brand-red">STUDIO:</span> Ibagué, Tolima, Colombia</p>
+          <p><span class="text-brand-red">INSTAGRAM:</span> @monvco____</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 bg-brand-card border border-brand-border p-8">
+        <form class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block font-mono text-[11px] text-brand-red uppercase mb-2">Artist / Producer Name *</label>
+              <input type="text" placeholder="e.g. KIDD KECA" class="w-full bg-black border border-brand-border focus:border-brand-red text-white p-3 text-sm font-mono focus:outline-none transition">
+            </div>
+            <div>
+              <label class="block font-mono text-[11px] text-brand-red uppercase mb-2">Email Address *</label>
+              <input type="email" placeholder="contact@domain.com" class="w-full bg-black border border-brand-border focus:border-brand-red text-white p-3 text-sm font-mono focus:outline-none transition">
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-mono text-[11px] text-brand-red uppercase mb-2">Demo / Portfolio Link (SoundCloud / Drive / Spotify) *</label>
+            <input type="url" placeholder="https://soundcloud.com/..." class="w-full bg-black border border-brand-border focus:border-brand-red text-white p-3 text-sm font-mono focus:outline-none transition">
+          </div>
+
+          <div>
+            <label class="block font-mono text-[11px] text-brand-red uppercase mb-2">Message / Vision</label>
+            <textarea rows="4" placeholder="Describe tu propuesta sonora y objetivos..." class="w-full bg-black border border-brand-border focus:border-brand-red text-white p-3 text-sm font-mono focus:outline-none transition"></textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-brand-red hover:bg-white text-black font-mono font-bold text-xs uppercase tracking-widest py-4 transition">
+            Submit Demo Application →
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-brand-border bg-black py-16 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div>
+  <img src="assets/img/logo-monvco.png" alt="MONVCO" class="h-12 w-auto object-contain mb-2">
+  <p class="font-mono text-xs text-neutral-500 uppercase">Independent Record Label & Studio</p>
+      </div>
+      <div class="flex space-x-8 font-mono text-xs tracking-wider uppercase text-neutral-400">
+        <a href="https://instagram.com/monvco____" target="_blank" class="hover:text-brand-red transition">@monvco____</a>
+        <a href="https://open.spotify.com/intl-es/artist/1kKDu17AJ4BEYQIMiYW9n8?si=U59rrq1tQXGTOBDCkUdZWQ" target="_blank" class="hover:text-brand-red transition">Spotify</a>
+        <a href="https://www.youtube.com/@MONVCO" target="_blank" class="hover:text-brand-red transition">YouTube</a>
+        <a href="https://www.tiktok.com/@monvco__" target="_blank" class="hover:text-brand-red transition">TikTok</a>
+      </div>
+
+      <div class="font-mono text-[10px] text-neutral-600 text-right uppercase">
+        <p>© 2026 MONVCO. ALL RIGHTS RESERVED.</p>
+        <p class="text-brand-red">IBAGUÉ, COLOMBIA</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Script de Smooth Scroll (Lenis) -->
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+  // Inicializar Scroll Suave
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+</script>
+<script>
+  // Detecta cuando un elemento entra en la pantalla
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+  // DESPLAZAMIENTO FLUIDO (SMOOTH SCROLL) PARA TODOS LOS ENLACES INTERNOS
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      
+      // Si el enlace es solo "#", no hace nada
+      if (targetId === '#' || targetId === '') return;
+      
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        e.preventDefault();
+        
+        // Si tienes instalado Lenis (Scroll de lujo), úsalo
+        if (typeof lenis !== 'undefined') {
+          lenis.scrollTo(targetElement, { offset: -80, duration: 1.2 });
+        } else {
+          // Si no, usa el scroll suave nativo del navegador
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
