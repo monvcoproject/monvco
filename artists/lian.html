@@ -164,5 +164,44 @@ TRAPPING TRAP😈🐐.
     © 2026 MONVCO. IBAGUÉ, COLOMBIA.
   </footer>
 
+  <script>
+  // Detecta cuando un elemento entra en la pantalla
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+  // DESPLAZAMIENTO FLUIDO (SMOOTH SCROLL) PARA TODOS LOS ENLACES INTERNOS
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      
+      // Si el enlace es solo "#", no hace nada
+      if (targetId === '#' || targetId === '') return;
+      
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        e.preventDefault();
+        
+        // Si tienes instalado Lenis (Scroll de lujo), úsalo
+        if (typeof lenis !== 'undefined') {
+          lenis.scrollTo(targetElement, { offset: -80, duration: 1.2 });
+        } else {
+          // Si no, usa el scroll suave nativo del navegador
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+</script>
+  
 </body>
 </html>
